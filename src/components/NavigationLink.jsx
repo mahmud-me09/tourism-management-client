@@ -8,7 +8,7 @@ const NavigationLink = ({children}) => {
 				to={`/${
 					children.toLowerCase() === "home"
 						? ""
-						: children.toLowerCase()
+						: children.split(" ").join("").toLowerCase()
 				}`}
 				className={({ isActive }) =>
 					isActive ? "bg-purple-500 text-white" : ""

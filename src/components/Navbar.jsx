@@ -9,14 +9,13 @@ const NavBar = () => {
 	const navLinks = (
 		<>
 			<NavigationLink>Home</NavigationLink>
-			
 
-			<NavigationLink>All-Tourists-Spot</NavigationLink>
+			<NavigationLink>All Tourists Spot</NavigationLink>
 			{user && (
-				<NavigationLink>Add-Tourists-Spot</NavigationLink>
+				<NavigationLink>Add Tourists Spot</NavigationLink>
 			)}
 			{user && (
-				<NavigationLink>My-List</NavigationLink>
+				<NavigationLink>My List</NavigationLink>
 			)}
 		</>
 	);

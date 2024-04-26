@@ -6,6 +6,8 @@ import Error from "../pages/Error";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AllTouristsSpotPage from "../pages/AllTouristsSpotPage";
+import AddTouristsspot from "../pages/AddTouristsspot";
+import MyList from "../pages/MyList";
 
 const Routes = () => {
 	const router = createBrowserRouter([
@@ -27,10 +29,17 @@ const Routes = () => {
 					element: <Register></Register>,
 				},
 				{
-					path: "/all-tourists-spot",
+					path: "/alltouristsspot",
 					element: <AllTouristsSpotPage></AllTouristsSpotPage>,
 				},
-
+				{
+					path: "/mylist",
+					element: <MyList></MyList>,
+				},
+				{
+					path: "/addtouristsspot",
+					element: <AddTouristsspot></AddTouristsspot>,
+				},
 			],
 		},
 	]);
