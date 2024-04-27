@@ -47,7 +47,7 @@ const Register = () => {
 	return (
 		<>
 			<Helmet>
-				<title>Luxury Living | Register</title>
+				<title>Travel Companion | Register</title>
 			</Helmet>
 			<div
 				className="w-full my-4 mx-auto max-w-md p-4 border border-purple-500 rounded-md shadow sm:p-8

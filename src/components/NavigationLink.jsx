@@ -11,7 +11,7 @@ const NavigationLink = ({children}) => {
 						: children.split(" ").join("").toLowerCase()
 				}`}
 				className={({ isActive }) =>
-					isActive ? "bg-purple-500 text-white" : ""
+					isActive ? "bg-orange-500 text-white" : ""
 				}
 			>
 				{children}

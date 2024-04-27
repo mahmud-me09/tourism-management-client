@@ -20,7 +20,7 @@ const NavBar = () => {
 		</>
 	);
 	return (
-		<div className="navbar bg-purple-50 rounded-b z-10 mb-4">
+		<div className="navbar bg-orange-50 rounded-b-lg z-10 mb-4">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<div
@@ -50,9 +50,12 @@ const NavBar = () => {
 						{navLinks}
 					</ul>
 				</div>
-				<h1 className="btn btn-ghost text-lg lg:text-2xl animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-black">
-					Luxury Living
-				</h1>
+				<div className="flex justify-center items-center">
+					<img className="w-20 h-20" src="./src/assets/favicon.png" alt="" />
+					<h1 className="btn w-36 h-24 btn-ghost text-lg lg:text-2xl animate-text bg-gradient-to-r from-teal-500 via-orange-500 to-purple-500 bg-clip-text text-transparent font-black">
+						Travel Companion
+					</h1>
+				</div>
 			</div>
 			<div className="navbar-center hidden lg:flex">
 				<ul className="menu menu-horizontal mx-4 px-1">{navLinks}</ul>

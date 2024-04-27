@@ -8,6 +8,7 @@ import Register from "../pages/Register";
 import AllTouristsSpotPage from "../pages/AllTouristsSpotPage";
 import AddTouristsspot from "../pages/AddTouristsspot";
 import MyList from "../pages/MyList";
+import { HelmetProvider } from "react-helmet-async";
 
 const Routes = () => {
 	const router = createBrowserRouter([
@@ -44,7 +45,7 @@ const Routes = () => {
 		},
 	]);
 
-	return <RouterProvider router={router} />;
+	return <HelmetProvider><RouterProvider router={router} /></HelmetProvider>;
 };
 
 export default Routes;

@@ -54,7 +54,7 @@ const Login = () => {
 			.then((result) => {
 				const user = result.user;
 				setUser(user);
-                toast.success("Logged in Successfully");
+				toast.success("Logged in Successfully");
 				navigate("/");
 			})
 			.catch((error) => console.log(error.message));
@@ -66,7 +66,7 @@ const Login = () => {
 			.then((result) => {
 				const user = result.user;
 				setUser(user);
-                toast.success("Logged in Successfully");
+				toast.success("Logged in Successfully");
 				navigate("/");
 				console.log(user);
 			})
@@ -76,7 +76,7 @@ const Login = () => {
 	return (
 		<>
 			<Helmet>
-				<title>Luxury Living | Login</title>
+				<title>Travel Companion | Login</title>
 			</Helmet>
 			<div className="w-full mx-auto max-w-md p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
 				<h2 className="mb-3 text-3xl font-semibold text-center">

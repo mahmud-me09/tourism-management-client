@@ -145,7 +145,16 @@ const AddTouristsspot = () => {
 			user_email,
 			user_name,
 		};
-        console.log(touristSpot)
+        fetch("http://localhost:3000/addtouristsspot", {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(touristSpot),
+		})
+			.then((res) => res.json())
+			.then((data) => console.log(data))
+			.catch(error=> console.log(error.message));
 	};
 
 	return (
