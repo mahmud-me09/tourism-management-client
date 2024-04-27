@@ -1,3 +1,4 @@
+import favicon from "../assets/favicon.png";
 const Footer = () => {
 	return (
 		<div>
@@ -6,7 +7,7 @@ const Footer = () => {
 					<div className="flex justify-center items-center">
 						<img
 							className="w-20 h-20"
-							src="./src/assets/favicon.png"
+							src={favicon}
 							alt=""
 						/>
 						<h1 className="btn w-36 h-24 btn-ghost text-lg lg:text-2xl animate-text bg-gradient-to-r from-teal-500 via-orange-500 to-purple-500 bg-clip-text text-transparent font-black">
