@@ -8,7 +8,7 @@ const DetailPage = () => {
 		<div className="hero min-h-screen bg-base-200">
 			<div className="hero-content flex-col relative">
 				<img
-					src={touristSpot.photoURL}
+					src={touristSpot?.photoURL}
 					className="w-full min-w-sm rounded-lg shadow-2xl"
 				/>
 				<h1 className="absolute top-10 font-bold text-2xl bg-orange-50 p-4 rounded-xl  opacity-70">

@@ -13,6 +13,7 @@ import DetailPage from "../pages/DetailPage";
 import { useState } from "react";
 import { useEffect } from "react";
 import PrivateRoutes from "./PrivateRoutes";
+import UpdatePage from "../pages/UpdatePage";
 
 const Routes = () => {
 	
@@ -47,22 +48,49 @@ const Routes = () => {
 					element: <AllTouristsSpotPage></AllTouristsSpotPage>,
 				},
 				{
+					path: "/mylist/:id",
+					loader: ({ params }) =>
+						fetch(
+							`https://tourism-management-server-nine.vercel.app/mylist/${params.id}`
+						),
+					element: (
+						<PrivateRoutes>
+							<UpdatePage></UpdatePage>
+						</PrivateRoutes>
+					),
+				},
+				{
 					path: "/mylist",
 					loader: () =>
 						fetch(
 							"https://tourism-management-server-nine.vercel.app/alltouristsspot"
 						),
-					element: <PrivateRoutes><MyList></MyList></PrivateRoutes>,
+					element: (
+						<PrivateRoutes>
+							<MyList></MyList>
+						</PrivateRoutes>
+					),
 				},
 				{
 					path: "/addtouristsspot",
-					element: <PrivateRoutes><AddTouristsspot></AddTouristsspot>,</PrivateRoutes>
+					element: (
+						<PrivateRoutes>
+							<AddTouristsspot></AddTouristsspot>,
+						</PrivateRoutes>
+					),
 				},
-				
+
 				{
 					path: "/alltouristsspot/:id",
-					loader:({params})=>fetch(`https://tourism-management-server-nine.vercel.app/alltouristsspot/${params.id}`),
-					element: <PrivateRoutes><DetailPage></DetailPage></PrivateRoutes>,
+					loader: ({ params }) =>
+						fetch(
+							`https://tourism-management-server-nine.vercel.app/alltouristsspot/${params.id}`
+						),
+					element: (
+						<PrivateRoutes>
+							<DetailPage></DetailPage>
+						</PrivateRoutes>
+					),
 				},
 			],
 		},

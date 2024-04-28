@@ -57,7 +57,10 @@ const Login = () => {
 				toast.success("Logged in Successfully");
 				navigate("/");
 			})
-			.catch((error) => console.log(error.message));
+			.catch((error) => {
+				console.log(error.message)
+				toast.error(error.message);
+			});
 	};
 
 	const handleGithubLogin = () => {
@@ -69,7 +72,10 @@ const Login = () => {
 				navigate("/");
 				console.log(user);
 			})
-			.catch((error) => console.log(error.message));
+			.catch((error) => {
+				console.log(error.message)
+				toast.error(error.message);
+			});
 	};
 
 	return (

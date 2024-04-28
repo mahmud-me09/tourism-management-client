@@ -1,18 +1,29 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { useLoaderData } from "react-router-dom";
 
 const UpdatePage = () => {
-	const [selectedCountry, setSelectedCountry] = useState("");
-	const [selectedTouristSpot, setSelectedTouristSpot] = useState("");
-	const [touristSpots, setTouristSpots] = useState([]);
-	const [touristSpotLocation, setTouristSpotLocation] = useState("");
+    const loadedTouristSpots = useLoaderData()
+    console.log(loadedTouristSpots)
+	    const [selectedCountry, setSelectedCountry] = useState(
+			loadedTouristSpots.country_name
+		);
+		const [selectedTouristSpot, setSelectedTouristSpot] = useState(
+			loadedTouristSpots.tourists_spot_name || ""
+		);
+		const [touristSpots, setTouristSpots] = useState([]);
+		const [touristSpotLocation, setTouristSpotLocation] = useState(
+			loadedTouristSpots.location || ""
+		);
+
 
 	const { user } = useContext(AuthContext);
 
 	const handleCountryChange = (event) => {
 		const selectedCountry = event.target.value;
 		setSelectedCountry(selectedCountry);
+        setSelectedTouristSpot("");
 
 		switch (selectedCountry) {
 			case "Jordan":
@@ -115,7 +126,7 @@ const UpdatePage = () => {
 	};
 
 	const handleTouristSpotChange = (event) => {
-		const selectedSpot = event.target.value;
+		const selectedSpot = event.target.value
 		setSelectedTouristSpot(selectedSpot);
 		const spot = touristSpots.find((spot) => spot.name === selectedSpot);
 		setTouristSpotLocation(spot.location);
@@ -150,9 +161,9 @@ const UpdatePage = () => {
 			user_name,
 		};
 		fetch(
-			"https://tourism-management-server-nine.vercel.app/addtouristsspot",
+			`https://tourism-management-server-nine.vercel.app/mylist/${loadedTouristSpots._id}`,
 			{
-				method: "POST",
+				method: "PUT",
 				headers: {
 					"content-type": "application/json",
 				},
@@ -162,8 +173,8 @@ const UpdatePage = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
-				if (data.insertedId) {
-					toast.success("successfully added to the database");
+				if (data.modifiedCount>0) {
+					toast.success("successfully Updated the database");
 					form.reset();
 				}
 			})
@@ -179,7 +190,7 @@ const UpdatePage = () => {
 				<fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
 					<div className="space-y-2 col-span-full lg:col-span-1">
 						<p className="font-bold lg:text-2xl">
-							Add A Tourists Spot
+							Update A Tourists Spot
 						</p>
 					</div>
 					<div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
@@ -189,7 +200,7 @@ const UpdatePage = () => {
 								className="w-full rounded-md h-8 border focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								name="country_name"
 								onChange={handleCountryChange}
-								value={selectedCountry}
+								defaultValue={selectedCountry}
 							>
 								<option value="">
 									--Please choose an option--
@@ -214,11 +225,16 @@ const UpdatePage = () => {
 								className="w-full h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								name="tourists_spot_name"
 								onChange={handleTouristSpotChange}
-								value={selectedTouristSpot}
+								defaultValue={selectedTouristSpot}
 							>
 								<option value="">
-									--Please choose a country first--
+									-------Select the country first------
 								</option>
+								{selectedTouristSpot && (
+									<option value={selectedTouristSpot}>
+										{selectedTouristSpot}
+									</option>
+								)}
 								{touristSpots.map((spot, index) => (
 									<option key={index} value={spot.name}>
 										{spot.name}
@@ -243,6 +259,7 @@ const UpdatePage = () => {
 								<input
 									type="url"
 									name="photoURL"
+									defaultValue={loadedTouristSpots.photoURL}
 									className="w-full p-4 h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								/>
 							</div>
@@ -253,6 +270,9 @@ const UpdatePage = () => {
 								<input
 									type="number"
 									name="average_cost"
+									defaultValue={
+										loadedTouristSpots.average_cost
+									}
 									className="w-full h-8 p-4 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								/>
 							</div>
@@ -261,6 +281,9 @@ const UpdatePage = () => {
 								<select
 									className="w-full rounded-md h-8 border focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 									name="seasonality"
+									defaultValue={
+										loadedTouristSpots.seasonality
+									}
 								>
 									<option value="">
 										--Please choose an option--
@@ -279,6 +302,9 @@ const UpdatePage = () => {
 								<input
 									type="number"
 									name="travel_time"
+									defaultValue={
+										loadedTouristSpots.travel_time
+									}
 									className="w-full p-4 h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								/>
 							</div>
@@ -288,6 +314,9 @@ const UpdatePage = () => {
 								</label>
 								<input
 									type="number"
+									defaultValue={
+										loadedTouristSpots.total_visitors_per_year
+									}
 									name="total_visitors_per_year"
 									className="w-full h-8 p-4 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								/>
@@ -320,11 +349,12 @@ const UpdatePage = () => {
 							<textarea
 								type="text"
 								name="description"
+                                defaultValue={loadedTouristSpots.description}
 								className="w-full h-32 p-4 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 							/>
 						</div>
 						<button className="btn btn-primary col-span-full">
-							<input type="submit" value="Submit" />
+							<input type="submit" value="Update" />
 						</button>
 					</div>
 				</fieldset>

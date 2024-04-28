@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import Cards from "../components/Cards";
 
 const AllTouristsSpotPage = () => {
 	const spots = useLoaderData();
     const [touristSpots, setTouristSpot] = useState(spots)
+	const navigation = useNavigation();
 
     const handleSort = ()=>{
         const sortedTouristSpots = [...touristSpots].sort((a, b) => {
