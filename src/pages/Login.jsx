@@ -17,7 +17,7 @@ const Login = () => {
 	const googleProvider = new GoogleAuthProvider();
 	googleProvider.addScope("email");
 	const githubProvider = new GithubAuthProvider();
-	githubProvider.addScope("user:email");
+	
 	const [showPassword, setShowPassword] = useState(false);
 	const [user, setUser] = useState(null);
 
@@ -61,7 +61,6 @@ const Login = () => {
 	};
 
 	const handleGithubLogin = () => {
-		console.log("clicked");
 		signInWithPopup(auth, githubProvider)
 			.then((result) => {
 				const user = result.user;

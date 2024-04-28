@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
 import Card from '../components/Card';
+import { Helmet } from 'react-helmet-async';
+import MyListCard from '../components/MyListCard';
 
 const MyList = () => {
     const touristSpots = useLoaderData();
@@ -11,13 +13,16 @@ const MyList = () => {
 	);
 	console.log(userAddedSpots)
     return (
-		<div>
+		<>
+			<Helmet>
+				<title>Travel Companion | My List</title>
+			</Helmet>
 			<div className="flex flex-col items-center flex-wrap lg:flex-row md:justify-center my-10 gap-6 mx-auto">
 				{userAddedSpots.map((spot) => (
-					<Card touristSpot={spot}></Card>
+					<MyListCard touristSpot={spot}></MyListCard>
 				))}
 			</div>
-		</div>
+		</>
 	);
 };
 

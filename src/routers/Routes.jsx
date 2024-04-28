@@ -52,21 +52,17 @@ const Routes = () => {
 						fetch(
 							"https://tourism-management-server-nine.vercel.app/alltouristsspot"
 						),
-					element: <MyList></MyList>,
+					element: <PrivateRoutes><MyList></MyList></PrivateRoutes>,
 				},
 				{
 					path: "/addtouristsspot",
-					element: <AddTouristsspot></AddTouristsspot>,
+					element: <PrivateRoutes><AddTouristsspot></AddTouristsspot>,</PrivateRoutes>
 				},
-				{
-					path: "/mylist/:id",
-					loader:({params})=>fetch(`https://tourism-management-server-nine.vercel.app/alltouristsspot/${params.id}`),
-					element: <PrivateRoutes><DetailPage></DetailPage></PrivateRoutes>,
-				},
+				
 				{
 					path: "/alltouristsspot/:id",
 					loader:({params})=>fetch(`https://tourism-management-server-nine.vercel.app/alltouristsspot/${params.id}`),
-					element: <DetailPage></DetailPage>,
+					element: <PrivateRoutes><DetailPage></DetailPage></PrivateRoutes>,
 				},
 			],
 		},
