@@ -12,6 +12,7 @@ import { HelmetProvider } from "react-helmet-async";
 import DetailPage from "../pages/DetailPage";
 import { useState } from "react";
 import { useEffect } from "react";
+import PrivateRoutes from "./PrivateRoutes";
 
 const Routes = () => {
 	
@@ -56,6 +57,11 @@ const Routes = () => {
 				{
 					path: "/addtouristsspot",
 					element: <AddTouristsspot></AddTouristsspot>,
+				},
+				{
+					path: "/mylist/:id",
+					loader:({params})=>fetch(`https://tourism-management-server-nine.vercel.app/alltouristsspot/${params.id}`),
+					element: <PrivateRoutes><DetailPage></DetailPage></PrivateRoutes>,
 				},
 				{
 					path: "/alltouristsspot/:id",
