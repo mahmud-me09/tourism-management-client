@@ -1,0 +1,202 @@
+{
+  "Jordan": [
+    {
+      "name": "Petra",
+      "photoURL": "https://i.ibb.co/JFJBSFd/images.jpg",
+      "location": "Ma'an Governorate, Jordan",
+      "description": "Historical and archaeological city famous for rock-cut architecture and water conduit system.",
+      "average_cost": "$50-$70 per day",
+      "seasonality": "Spring and autumn",
+      "travel_time": "2-3 days",
+      "total_visitors_per_year": 800000
+    },
+    {
+      "name": "Wadi Rum",
+      "location": "Aqaba Governorate, Jordan",
+      "description": "Protected desert wilderness known for sandstone mountains, rock formations, and unique desert landscape.",
+      "average_cost": "$70-$100 per day",
+      "seasonality": "Year-round (best in spring and autumn)",
+      "travel_time": "A day trip or overnight stay",
+      "total_visitors_per_year": 200000
+    },
+    {
+      "name": "Dead Sea",
+      https://i.ibb.co/dLTGnbh/deadsea.jpg
+      "location": "Bordering Jordan and Israel",
+      "description": "Famous for high salt content allowing visitors to float effortlessly and mineral-rich mud.",
+      "average_cost": "$50-$80 per day",
+      "seasonality": "Spring and autumn",
+      "travel_time": "A day trip or 2-3 days for relaxation",
+      "total_visitors_per_year": 1500000
+    },
+    {
+      "name": "Jerash",
+      "location": "Jerash Governorate, Jordan",
+      "description": "Ancient Roman city with well-preserved ruins, temples, theaters, and colonnaded streets.",
+      "average_cost": "$40-$60 per day",
+      "seasonality": "Year-round (best in spring and autumn)",
+      "travel_time": "A day trip or half-day visit",
+      "total_visitors_per_year": 500000
+    }
+  ],
+  "Saudi Arabia": [
+    {
+      "name": "Al-Ula",
+      https://i.ibb.co/tCZ13CH/alula.jpg
+      "location": "Al-Ula Governorate, Saudi Arabia",
+      "description": "Renowned for ancient archaeological sites, including UNESCO World Heritage Site of Hegra (Mada'in Saleh).",
+      "average_cost": "$80-$120 per day",
+      "seasonality": "Winter (November to March)",
+      "travel_time": "2-3 days",
+      "total_visitors_per_year": 150000
+    },
+    {
+      "name": "Riyadh",
+      "location": "Riyadh Province, Saudi Arabia",
+      "description": "Capital city offering modern architecture, historical sites, and cultural attractions.",
+      "average_cost": "$60-$100 per day",
+      "seasonality": "Year-round (best in winter)",
+      "travel_time": "2-3 days",
+      "total_visitors_per_year": 2000000
+    },
+    {
+      "name": "Jeddah Corniche",
+      "location": "Jeddah, Makkah Province, Saudi Arabia",
+      "description": "Waterfront area along the Red Sea with parks, beaches, and a vibrant atmosphere.",
+      "average_cost": "$40-$70 per day",
+      "seasonality": "Pleasant in winter",
+      "travel_time": "A day trip",
+      "total_visitors_per_year": 500000
+    },
+    {
+      "name": "Edge of the World",
+      "location": "Riyadh Province, Saudi Arabia",
+      "description": "Dramatic geological formation featuring cliffs and rocky outcrops overlooking a vast desert landscape.",
+      "average_cost": "$50-$80 per day",
+      "seasonality": "Best in winter",
+      "travel_time": "A day trip",
+      "total_visitors_per_year": 100000
+    }
+  ],
+  "United Arab Emirates": [
+    {
+      "name": "Burj Khalifa",
+      https://i.ibb.co/ssfBbN8/burj.jpg
+      "location": "Dubai, United Arab Emirates",
+      "description": "World's tallest building with panoramic views, dining, shopping, and Dubai Fountain show.",
+      "average_cost": "$30-$150 per day",
+      "seasonality": "Year-round (best in winter)",
+      "travel_time": "A few hours",
+      "total_visitors_per_year": 2000000
+    },
+    {
+      "name": "Palm Jumeirah",
+      "location": "Dubai, United Arab Emirates",
+      "description": "Artificial island with luxury resorts, beach clubs, and attractions like Atlantis, The Palm.",
+      "average_cost": "$50-$200 per day",
+      "seasonality": "Best in winter",
+      "travel_time": "1-2 days",
+      "total_visitors_per_year": 3000000
+    },
+    {
+      "name": "Sheikh Zayed Grand Mosque",
+      "location": "Abu Dhabi, United Arab Emirates",
+      "description": "One of the world's largest mosques with stunning architecture, marble domes, and intricate decorations.",
+      "average_cost": "Free entry; guided tours may have a fee",
+      "seasonality": "Year-round (best in winter)",
+      "travel_time": "A few hours",
+      "total_visitors_per_year": 4000000
+    },
+    {
+      "name": "Dubai Desert Safari",
+      "location": "Dubai, United Arab Emirates",
+      "description": "Thrilling experiences like dune bashing, camel riding, sandboarding, and traditional Bedouin camp activities.",
+      "average_cost": "$50-$150 per person",
+      "seasonality": "Best in winter",
+      "travel_time": "Half-day to full-day",
+      "total_visitors_per_year": 1500000
+    }
+  ],
+  "Iran": [
+    {
+      "name": "Persepolis",
+      https://i.ibb.co/Pr582Vm/Persepolis.jpg
+      "location": "Fars Province, Iran",
+      "description": "Ancient capital of the Achaemenid Empire with impressive ruins, including monumental staircases and palaces.",
+      "average_cost": "$10-$20 per person",
+      "seasonality": "Spring and autumn",
+      "travel_time": "Half-day to full-day",
+      "total_visitors_per_year": 500000
+    },
+    {
+      "name": "Isfahan's Naqsh-e Jahan Square",
+      "location": "Isfahan Province, Iran",
+      "description": "UNESCO World Heritage Site featuring iconic landmarks like Shah Mosque, Sheikh Lotfollah Mosque, and Ali Qapu Palace.",
+      "average_cost": "$5-$10 per person",
+      "seasonality": "Year-round",
+      "travel_time": "A day",
+      "total_visitors_per_year": 1000000
+    },
+    {
+      "name": "Shiraz",
+      "location": "Fars Province, Iran",
+      "description": "City of poets, literature, and gardens with attractions like Tomb of Hafez, Eram Garden, and Nasir al-Mulk Mosque.",
+      "average_cost": "$30-$50 per day",
+      "seasonality": "Spring and autumn",
+      "travel_time": "2-3 days",
+      "total_visitors_per_year": 1500000
+    },
+    {
+      "name": "Iranian Desert Villages (Abyaneh, Yazd, etc.)",
+    "Location": "Various provinces in Iran",
+"description": "Several desert villages with unique architecture, cultural heritage, and traditional way of life, offering insights into Persian history, crafts, and local customs.",
+"average_cost": "$20-$50",
+"seasonality": "spring",
+"travel_time": 4,
+"total_visitors_per_year": 70000
+    },
+{
+  "Qatar": [
+    {
+      "name": "The Pearl-Qatar",
+      https://i.ibb.co/K7npxD9/perlkatar.jpg
+      "location": "Doha, Qatar",
+      "description": "Artificial island featuring luxury residences, hotels, marinas, and retail outlets.",
+      "average_cost": "$50-$100 per day",
+      "seasonality": "Year-round (best in winter)",
+      "travel_time": "A day trip or leisurely exploration over a weekend",
+      "total_visitors_per_year": 500000
+    },
+    {
+      "name": "Souq Waqif",
+      https://i.ibb.co/FXgQFxQ/SOUQ-WAQIF.jpg
+      "location": "Doha, Qatar",
+      "description": "Traditional market with labyrinthine alleys, diverse shops, and dining options.",
+      "average_cost": "$20-$50 per person",
+      "seasonality": "Year-round (evenings are more lively)",
+      "travel_time": "A few hours",
+      "total_visitors_per_year": 1000000
+    },
+    {
+      "name": "Katara Cultural Village",
+      "location": "Doha, Qatar",
+      "description": "Waterfront development showcasing Qatari heritage, arts, and culture through museums, galleries, and theaters.",
+      "average_cost": "Free entry; fees may apply for specific events or attractions",
+      "seasonality": "Year-round",
+      "travel_time": "A few hours",
+      "total_visitors_per_year": 1500000
+    },
+    {
+      "name": "Khor Al Adaid (Inland Sea)",
+      https://i.ibb.co/Jnt3kD5/khoraladidqatar.jpg
+      "location": "Southeastern Qatar",
+      "description": "UNESCO-listed natural reserve featuring salt flats, sand dunes, and a tidal inlet connected to the Arabian Gulf.",
+      "average_cost": "$100-$200 per person",
+      "seasonality": "Best in winter",
+      "travel_time": "A full-day or overnight excursion",
+      "total_visitors_per_year": 100000
+    }
+  ]
+}
+}
+

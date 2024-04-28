@@ -9,8 +9,12 @@ import AllTouristsSpotPage from "../pages/AllTouristsSpotPage";
 import AddTouristsspot from "../pages/AddTouristsspot";
 import MyList from "../pages/MyList";
 import { HelmetProvider } from "react-helmet-async";
+import DetailPage from "../pages/DetailPage";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Routes = () => {
+	
 	const router = createBrowserRouter([
 		{
 			path: "/",
@@ -19,6 +23,10 @@ const Routes = () => {
 			children: [
 				{
 					path: "/",
+					loader: () =>
+						fetch(
+							"https://tourism-management-server-nine.vercel.app/alltouristsspot"
+						),
 					element: <Home></Home>,
 				},
 				{
@@ -31,15 +39,28 @@ const Routes = () => {
 				},
 				{
 					path: "/alltouristsspot",
+					loader: () =>
+						fetch(
+							"https://tourism-management-server-nine.vercel.app/alltouristsspot"
+						),
 					element: <AllTouristsSpotPage></AllTouristsSpotPage>,
 				},
 				{
 					path: "/mylist",
+					loader: () =>
+						fetch(
+							"https://tourism-management-server-nine.vercel.app/alltouristsspot"
+						),
 					element: <MyList></MyList>,
 				},
 				{
 					path: "/addtouristsspot",
 					element: <AddTouristsspot></AddTouristsspot>,
+				},
+				{
+					path: "/alltouristsspot/:id",
+					loader:({params})=>fetch(`https://tourism-management-server-nine.vercel.app/alltouristsspot/${params.id}`),
+					element: <DetailPage></DetailPage>,
 				},
 			],
 		},

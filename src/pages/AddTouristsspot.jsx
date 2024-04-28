@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const AddTouristsspot = () => {
 	const [selectedCountry, setSelectedCountry] = useState("");
 	const [selectedTouristSpot, setSelectedTouristSpot] = useState("");
 	const [touristSpots, setTouristSpots] = useState([]);
 	const [touristSpotLocation, setTouristSpotLocation] = useState("");
+
+	const { user } = useContext(AuthContext);
 
 	const handleCountryChange = (event) => {
 		const selectedCountry = event.target.value;
@@ -145,16 +149,25 @@ const AddTouristsspot = () => {
 			user_email,
 			user_name,
 		};
-        fetch("http://localhost:3000/addtouristsspot", {
-			method: "POST",
-			headers: {
-				"content-type": "application/json",
-			},
-			body: JSON.stringify(touristSpot),
-		})
+        fetch(
+			"https://tourism-management-server-nine.vercel.app/addtouristsspot",
+			{
+				method: "POST",
+				headers: {
+					"content-type": "application/json",
+				},
+				body: JSON.stringify(touristSpot),
+			}
+		)
 			.then((res) => res.json())
-			.then((data) => console.log(data))
-			.catch(error=> console.log(error.message));
+			.then((data) => {
+				console.log(data);
+				if (data.insertedId) {
+					toast.success("successfully added to the database");
+					form.reset();
+				}
+			})
+			.catch((error) => console.log(error.message));
 	};
 
 	return (
@@ -220,7 +233,7 @@ const AddTouristsspot = () => {
 								<input
 									type="text"
 									name="location"
-									className="w-full h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+									className="w-full h-8 p-4 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 									value={touristSpotLocation}
 									readOnly
 								/>
@@ -230,7 +243,7 @@ const AddTouristsspot = () => {
 								<input
 									type="url"
 									name="photoURL"
-									className="w-full h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+									className="w-full p-4 h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								/>
 							</div>
 						</div>
@@ -240,7 +253,7 @@ const AddTouristsspot = () => {
 								<input
 									type="number"
 									name="average_cost"
-									className="w-full h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+									className="w-full h-8 p-4 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								/>
 							</div>
 							<div className="col-span-full sm:col-span-3">
@@ -266,7 +279,7 @@ const AddTouristsspot = () => {
 								<input
 									type="number"
 									name="travel_time"
-									className="w-full h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+									className="w-full p-4 h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								/>
 							</div>
 							<div className="col-span-full sm:col-span-3">
@@ -276,7 +289,7 @@ const AddTouristsspot = () => {
 								<input
 									type="number"
 									name="total_visitors_per_year"
-									className="w-full h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+									className="w-full h-8 p-4 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								/>
 							</div>
 						</div>
@@ -286,15 +299,19 @@ const AddTouristsspot = () => {
 								<input
 									type="email"
 									name="user_email"
-									className="w-full h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+									defaultValue={user?.providerData[0]?.email}
+									readOnly
+									className="w-full p-4 h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								/>
 							</div>
 							<div className="col-span-full sm:col-span-3">
 								<label className="text-sm">User Name</label>
 								<input
 									type="text"
+									defaultValue={user?.displayName}
+									readOnly
 									name="user_name"
-									className="w-full h-8 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+									className="w-full h-8 p-4 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 								/>
 							</div>
 						</div>
@@ -303,7 +320,7 @@ const AddTouristsspot = () => {
 							<textarea
 								type="text"
 								name="description"
-								className="w-full h-32 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+								className="w-full h-32 p-4 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 							/>
 						</div>
 						<button className="btn btn-primary col-span-full">
