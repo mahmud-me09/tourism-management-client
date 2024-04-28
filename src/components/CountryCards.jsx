@@ -9,7 +9,7 @@ const CountryCards = ({country}) => {
 			</figure>
 			<div className="card-body ">
 				<h2 className="font-bold text-2xl text-center">
-					{country?.country}
+					{country?.country_name}
 				</h2>
 				<p className="text-justify">{country?.description}</p>
 			</div>
