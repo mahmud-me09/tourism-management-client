@@ -5,27 +5,24 @@ import group from "../assets/ourServiceCard/group.jpg";
 import guided from "../assets/ourServiceCard/guided.jpg";
 import luxury from "../assets/ourServiceCard/luxury.jpg";
 import whyChooseUs from "../assets/whyChooseUs.jpg";
-import Cards from "../components/Cards";
+
 import { useLoaderData } from "react-router-dom";
-import Marquee from "react-fast-marquee";
 import Card from "../components/Card";
 import CountryCards from "../components/CountryCards";
-
-
 
 const Home = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const touristSpots = useLoaderData();
-    const [countries, setCountries] = useState([])
-    useEffect(()=>{
-        fetch("https://tourism-management-server-nine.vercel.app/country")
-        .then(res=>res.json())
-        .then(data=>{
-			setCountries(data)
-			setIsLoading(false)
-		});
-    },[])
-	
+	const [countries, setCountries] = useState([]);
+	useEffect(() => {
+		fetch("https://tourism-management-server-nine.vercel.app/country")
+			.then((res) => res.json())
+			.then((data) => {
+				setCountries(data);
+				setIsLoading(false);
+			});
+	}, []);
+
 	return isLoading ? (
 		<div className="flex justify-center items-center">
 			<span className="loading loading-spinner loading-lg"></span>
@@ -48,21 +45,15 @@ const Home = () => {
 					thrilling adventures and serene getaways to cultural
 					immersions and family-friendly vacations.
 				</p>
-				<Marquee
-					pauseOnHover={true}
-					delay={1}
-					loop={0}
-					gradient={false}
-				>
-					<div className="flex flex-row my-10 gap-6 mx-auto">
-						{touristSpots.map((touristSpot) => (
-							<Card
-								key={touristSpot?._id}
-								touristSpot={touristSpot}
-							></Card>
-						))}
-					</div>
-				</Marquee>
+
+				<div className="flex md:flex-wrap flex-col items-center lg:flex-row  md:justify-center  my-10 gap-6 mx-auto">
+					{touristSpots.map((touristSpot) => (
+						<Card
+							key={touristSpot?._id}
+							touristSpot={touristSpot}
+						></Card>
+					))}
+				</div>
 			</div>
 			<div className="my-10 text-center">
 				<h1 className=" font-bold my-4 text-3xl bg-gradient-to-r from-green-500 via-orange-500 to-purple-800 bg-clip-text text-transparent">
@@ -76,7 +67,7 @@ const Home = () => {
 					immersions and family-friendly vacations.
 				</p>
 
-				<div className="flex flex-wrap justify-between flex-row my-10 gap-6 mx-auto">
+				<div className="flex flex-col md:flex-wrap items-center lg:flex-row  md:justify-center  my-10 gap-6 mx-auto">
 					{countries.map((country) => (
 						<CountryCards
 							key={country?._id}

@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link, useNavigate, useNavigation } from 'react-router-dom';
 
-const Card = ({touristSpot}) => {
-	const navigate = useNavigate()
-    return (
+const CountrySpecificTouristSpot = ({ touristSpot }) => {
+	return (
 		<div className="card max-w-96 bg-base-100 shadow-xl">
 			<figure>
 				<img
@@ -28,10 +26,17 @@ const Card = ({touristSpot}) => {
 						Travel Time {touristSpot?.travel_time} days
 					</div>
 				</div>
-				<button onClick={()=>navigate(`/alltouristsspot/${touristSpot._id}`)} className='btn w-full my-4 text-black bg-orange-200'>View Detail</button>
+				<button
+					onClick={() =>
+						navigate(`/alltouristsspot/${touristSpot._id}`)
+					}
+					className="btn w-full my-4 text-black bg-orange-200"
+				>
+					View Detail
+				</button>
 			</div>
 		</div>
 	);
 };
 
-export default Card;
+export default CountrySpecificTouristSpot;

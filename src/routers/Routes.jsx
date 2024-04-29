@@ -14,6 +14,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdatePage from "../pages/UpdatePage";
+import CountryDetailPage from "../pages/CountryDetailPage";
 
 const Routes = () => {
 	
@@ -46,6 +47,14 @@ const Routes = () => {
 							"https://tourism-management-server-nine.vercel.app/alltouristsspot"
 						),
 					element: <AllTouristsSpotPage></AllTouristsSpotPage>,
+				},
+				{
+					path: "/countrytouristsspot/:country_name",
+					loader: ({ params }) =>
+						fetch(
+							`https://tourism-management-server-nine.vercel.app/countrytouristsspot/${params.country_name}`
+						),
+					element: <CountryDetailPage></CountryDetailPage>,
 				},
 				{
 					path: "/mylist/:id",
