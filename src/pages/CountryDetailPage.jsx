@@ -12,7 +12,7 @@ const CountryDetailPage = () => {
 			<h1 className="text-3xl font-bold text-center p-6">
 				{country_name}
 			</h1>
-			<div className="flex border-2 flex-col lg:flex-row justify-center items-center lg:flex-wrap gap-6">
+			<div className="flex flex-col lg:flex-row justify-center items-center lg:flex-wrap gap-6">
 				{countrySpecificTouristSpots.map((spot) => (
 					<CountrySpecificTouristSpot
 						key={spot._id}
