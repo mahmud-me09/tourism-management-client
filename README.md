@@ -1,8 +1,11 @@
 Live Link: https://tourism-management-72e6b.web.app/
+
 Selected Category: Tourism Management Website
+
 Implemented Challenge Packages:
   * Lottie React
   * React Tooltip
+
 Notable Features:
 1. Simplified Authentication system to log-in via google, github and email-password system
 2. you can register using user email and password photoURL and Name
