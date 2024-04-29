@@ -8,7 +8,7 @@ const CountryCards = ({country}) => {
 		navigate(`/countrytouristsspot/${country_name}`);
 	}
     return (
-		<div onClick={()=>handleOnClick(country.country_name)} className="card hover:scale-105 hover:cursor-pointer max-w-96 bg-orange-50  shadow-xl">
+		<div onClick={()=>handleOnClick(country.country_name)} className="card hover:scale-105 hover:cursor-pointer max-w-96 border-2 shadow-xl">
 			<figure>
 				<img src={country?.image} alt={country.country_name} />
 			</figure>

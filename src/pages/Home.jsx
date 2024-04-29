@@ -179,12 +179,12 @@ const Home = () => {
 							</div>
 						</div>
 						<div className="text-Black bg-orange-50 opacity-80 p-6 rounded-3xl w-full lg:w-1/2 ">
-							<h1 className="text-lg lg:text-5xl font-bold ">
+							<h1 className="text-lg lg:text-5xl text-black font-bold ">
 								Why Choose Us ???
 							</h1>
-							<p className="py-6">
+							<p className="py-6 text-black">
 								At{" "}
-								<strong className="bg-gradient-to-r from-teal-500 via-orange-500 to-purple-500 bg-clip-text text-transparent font-black">
+								<strong className="bg-gradient-to-r from-teal-500 via-orange-500 to-purple-500 bg-clip-text text-transparent  text-bold">
 									Travel Companion
 								</strong>
 								, we pride ourselves on delivering exceptional

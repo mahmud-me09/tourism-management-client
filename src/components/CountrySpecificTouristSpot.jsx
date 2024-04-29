@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CountrySpecificTouristSpot = ({ touristSpot }) => {
+	const navigate = useNavigate()
 	return (
-		<div className="card max-w-96 bg-base-100 shadow-xl">
+		<div className="card max-w-96 border-2 shadow-xl">
 			<figure>
 				<img
 					className="w-full h-[256px]"

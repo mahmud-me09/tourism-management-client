@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavigationLink = ({children}) => {
     return (
-		<li className="font-bold">
+		<li className="font-bold text-black">
 			<NavLink
 				to={`/${
 					children.toLowerCase() === "home"
@@ -11,7 +11,9 @@ const NavigationLink = ({children}) => {
 						: children.split(" ").join("").toLowerCase()
 				}`}
 				className={({ isActive }) =>
-					isActive ? "bg-orange-500 text-white" : ""
+					isActive
+						? "bg-orange-500 text-white"
+						: ""
 				}
 			>
 				{children}
