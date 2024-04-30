@@ -228,7 +228,7 @@ const UpdatePage = () => {
 								defaultValue={selectedTouristSpot}
 							>
 								<option value="">
-									-------Select the country first------
+									--Select the country first--
 								</option>
 								{selectedTouristSpot && (
 									<option value={selectedTouristSpot}>
@@ -349,13 +349,50 @@ const UpdatePage = () => {
 							<textarea
 								type="text"
 								name="description"
-                                defaultValue={loadedTouristSpots.description}
+								defaultValue={loadedTouristSpots.description}
 								className="w-full h-32 p-4 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 							/>
 						</div>
-						<button className="btn btn-primary col-span-full">
+						{/* <button className="btn btn-primary col-span-full">
 							<input type="submit" value="Update" />
-						</button>
+						</button> */}
+						<label
+							htmlFor={`my_modal_submit`}
+							className="btn btn-success col-span-full"
+						>
+							Submit
+						</label>
+
+						<input
+							type="checkbox"
+							id={`my_modal_submit`}
+							className="modal-toggle"
+						/>
+						<div className="modal" role="dialog">
+							<div className="modal-box">
+								<h3 className=" text-center font-bold text-lg">
+									Hello {user.displayName}!
+								</h3>
+								<p className="py-4 text-center">
+									Are You sure You want to Update this Tourist
+									Spot on your database?
+								</p>
+								<div className="modal-action justify-between">
+									<input
+										value="confirm"
+										type="submit"
+										className="btn btn-error w-1/2"
+									/>
+
+									<label
+										htmlFor={`my_modal_submit`}
+										className="btn btn-success w-1/2"
+									>
+										Exit!
+									</label>
+								</div>
+							</div>
+						</div>
 					</div>
 				</fieldset>
 			</form>

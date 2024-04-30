@@ -323,9 +323,46 @@ const AddTouristsspot = () => {
 								className="w-full h-32 p-4 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
 							/>
 						</div>
-						<button className="btn btn-primary col-span-full">
-							<input type="submit" value="Submit" />
-						</button>
+						{/* <button className="btn btn-primary col-span-full"> */}
+						{/* <input type="submit" value="Submit" /> */}
+						<label
+							htmlFor={`my_modal_submit`}
+							className="btn btn-success col-span-full"
+						>
+							Submit
+						</label>
+
+						<input
+							type="checkbox"
+							id={`my_modal_submit`}
+							className="modal-toggle"
+						/>
+						<div className="modal" role="dialog">
+							<div className="modal-box">
+								<h3 className=" text-center font-bold text-lg">
+									Hello {user.displayName}!
+								</h3>
+								<p className="py-4 text-center">
+									Are You sure You want to Add this Tourist
+									Spot to your database?
+								</p>
+								<div className="modal-action justify-between">
+									<input
+										value="confirm"
+										type="submit"
+										className="btn btn-error w-1/2"
+									/>
+
+									<label
+										htmlFor={`my_modal_submit`}
+										className="btn btn-success w-1/2"
+									>
+										Exit!
+									</label>
+								</div>
+							</div>
+						</div>
+						{/* </button> */}
 					</div>
 				</fieldset>
 			</form>
